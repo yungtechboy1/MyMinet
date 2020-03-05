@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <ApplicationIcon />
+    <OutputType>Exe</OutputType>
+    <StartupObject>MiNET.ServiceKiller.Emulator</StartupObject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="log4net.xml" />
+    <None Remove="server.conf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="log4net.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="server.conf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MiNET.Client\MiNET.Client.csproj" />
+    <ProjectReference Include="..\MiNET\MiNET.csproj" />
+  </ItemGroup>
+
+</Project>
